@@ -1,13 +1,13 @@
-# Araştırma Ödevleri:
+# Research Assignments:
 
 
 
-### <a name="1"></a> Araştırma Projesi 1
+### <a name="1"></a> Research Assignment 1
 
-- Lateinit neden kullanıyoruz?
-- Lateinit kullanımından bahseder misiniz?
-- Lateinit için bir örnek kullanım gösterir misiniz ?
-### <a name="1"></a> Cevap 1
+- Why do we use lateinit?
+- Can you mention about the use of lateinite?
+- Can you show an example usage for lateinit?
+### <a name="1"></a> Answer 1
 -lateinit
 lateinit means late initialization. If you do not want to initialize a variable in the constructor instead you want to initialize it later on and if you can guarantee the initialization before using it, then declare that variable with lateinit keyword. It will not allocate memory until initialized.
 
@@ -36,15 +36,15 @@ class Plant {
 
 
 
-### <a name="2"></a> Araştırma Projesi 2
+### <a name="2"></a>  Research Assignment 2
 
 
-- Layout dizini içinde xml dosyalarımız için kullandığımız namespace nedir ?
-- Neden kullanılmaktadır ?
-- Nasıl kullanılmalıdır ?
-- Bir adet Tools (tools namespace) attribute kullanımını gösterir misiniz ? 
+- What is the namespace we use for our xml files in the layout directory?
+- Why is it used?
+- How should it be used?
+- Can you show the use of a Tools (tools namespace) attribute?
 
-### <a name="2"></a> Cevap 2
+### <a name="2"></a> Answer 2
 
 Android Studio supports a variety of XML attributes in the tools namespace that enable design-time features (such as which layout to show in a fragment) or compile-time behaviors (such as which shrinking mode to apply to your XML resources). When you build your app, the build tools remove these attributes so there is no effect on your APK size or runtime behavior.
 
