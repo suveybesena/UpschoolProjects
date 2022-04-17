@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
@@ -23,7 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
-        android:text="Let's Start"
+        android:text="@string/let_s_start"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -35,7 +37,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/buttonbg"
         android:ems="10"
-        android:hint="Email"
+        android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:padding="20dp"
         android:textColor="@color/purple_200"
@@ -50,7 +52,7 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/buttonbg"
         android:ems="10"
-        android:hint="Password"
+        android:hint="@string/password"
         android:inputType="textPassword"
         android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -65,7 +67,7 @@
         android:layout_marginTop="12dp"
         android:backgroundTint="#2C2B47"
         android:fontFamily="@font/acme"
-        android:text="Sign In"
+        android:text="@string/sign_in"
         android:textAllCaps="false"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -76,24 +78,32 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
         android:fontFamily="@font/acme"
-        android:text="Don't have an account? Sign Up"
+        android:text="@string/don_t_have_an_account_sign_up"
         android:textColor="#B9B8C6"
         android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.309"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bvSignIn" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="11dp"
-        android:src="@drawable/ic_rectangle"
+    <Button
+        android:id="@+id/tvSignUp"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="93dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:text="@string/sign_up"
+        android:textAllCaps="false"
+        android:textColor="#B9B8C6"
+        android:textSize="17sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.738"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/bvSignIn" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
