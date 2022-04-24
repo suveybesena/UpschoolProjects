@@ -132,9 +132,9 @@ ValueAnimator
 Object Animator
  Canlandırmak için bir hedef nesne ve nesne özelliği ayarlamanıza izin veren bir ValueAnimator alt sınıfı. Bu sınıf, animasyon için yeni bir değer hesapladığında özelliği buna göre günceller. Hedef nesnelerde değerleri canlandırma sürecini çok daha kolay hale getirdiği için çoğu zaman ObjectAnimator kullanmak istersiniz. Ancak, ObjectAnimator'ın hedef nesnede belirli erişimci yöntemlerinin bulunmasını gerektirme gibi birkaç kısıtlaması daha olduğundan, bazen ValueAnimator'ı doğrudan kullanmak istersiniz.
     
-    
- 
+  ![image](https://user-images.githubusercontent.com/85364012/164991408-9f36b443-2d9c-47d2-9e6a-0f58b97f6788.png)
 
+ 
 https://user-images.githubusercontent.com/85364012/164990955-b689475b-655d-444c-89c4-54cc195472c7.mp4
 
 
