@@ -1,4 +1,4 @@
-# Create Custom Animator
+# Android Tween Animation Sample
 In this project, we made a custom animation using the animation features.
 
 
