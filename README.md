@@ -1,106 +1,74 @@
 # Research Assignments:
+    
+## <a name="2"></a> Araştırma Projesi 1
 
-# <a name="1"></a> English
+- Lateinit neden kullanıyoruz?
+- Lateinit kullanımından bahseder misiniz?
+- Lateinit için bir örnek kullanım gösterir misiniz ?
+    
+### <a name="3"></a> Cevap 1   
+ 
+ -latinit
+lateinit geç başlatma anlamına gelir. Yapıcıda bir değişken başlatmak istemiyorsanız, onu daha sonra başlatmak istiyorsanız ve kullanmadan önce başlatmayı garanti edebiliyorsanız, o değişkeni lateinit anahtar kelimesiyle bildirin. Başlatılana kadar bellek ayırmaz.
 
-### <a name="1"></a> Research Assignment 1
-
-- Why do we use lateinit?
-- Can you mention about the use of lateinite?
-- Can you show an example usage for lateinit?
-### <a name="1"></a> Answer 1
--lateinit
-lateinit means late initialization. If you do not want to initialize a variable in the constructor instead you want to initialize it later on and if you can guarantee the initialization before using it, then declare that variable with lateinit keyword. It will not allocate memory until initialized.
-
--You cannot use val for lateinit variable as it will be initialized later on. Also you must guarantee that you are initializing the variable before using the variable otherwise it will throw exception at runtime. You cannot use lateinit for primitive type properties like Int, Long etc.
-
-class Animal {
+-Lateinit değişkeni daha sonra başlatılacağı için val kullanamazsınız. Ayrıca değişkeni kullanmadan önce değişkeni başlattığınızdan emin olmalısınız, aksi takdirde çalışma zamanında istisna atar. Lateinit'i Int, Long vb. gibi tür özellikleri için kullanamazsınız.
+    
+    class Animal {
+    
     lateinit var a: String
 
     fun cat() {
+    
         print(a.length)  // UninitializedPropertyAccessException is thrown
+    
         a = "cat"
+    
         print(a.length)  // >>> 3
+    
     }
+    
 }
 
 class Plant {
+    
     var b: String? = null
 
     fun flower() {
+    
         print(b.length)  // won't compile, null check is obligatory here
+    
         print(b?.length) // >>> null
+    
         b = "flower"
+    
         print(b?.length) // >>> 3
+    
     }
+    
 }
+    
+ ## <a name="2"></a> Araştırma Projesi 2
 
 
+- Layout dizini içinde xml dosyalarımız için kullandığımız namespace nedir ?
+- Neden kullanılmaktadır ?
+- Nasıl kullanılmalıdır ?
+- Bir adet Tools (tools namespace) attribute kullanımını gösterir misiniz ? 
+    
+### <a name="3"></a> Cevap 2
+    
+Android Studio, tools namespace'de tasarım zamanı özelliklerini (bir parçada hangi düzenin gösterileceği gibi) veya derleme zamanı davranışlarını (XML kaynaklarınıza hangi küçültme modunun uygulanacağı gibi) etkinleştiren çeşitli XML özniteliklerini destekler. Uygulamanızı oluşturduğunuzda, derleme araçları bu öznitelikleri kaldırır, böylece APK boyutunuz veya çalışma zamanı davranışınız üzerinde hiçbir etkisi olmaz.
 
-### <a name="2"></a>  Research Assignment 2
-
-
-- What is the namespace we use for our xml files in the layout directory?
-- Why is it used?
-- How should it be used?
-- Can you show the use of a Tools (tools namespace) attribute?
-
-### <a name="2"></a> Answer 2
-
-Android Studio supports a variety of XML attributes in the tools namespace that enable design-time features (such as which layout to show in a fragment) or compile-time behaviors (such as which shrinking mode to apply to your XML resources). When you build your app, the build tools remove these attributes so there is no effect on your APK size or runtime behavior.
-
-To use these attributes, add the tools namespace to the root element of each XML file where you'd like to use them, as shown here:  
+Bu öznitelikleri kullanmak için, burada gösterildiği gibi, araçları kullanmak istediğiniz her XML dosyasının root elementine tools namespace alanı ekleyebilirsiniz:
 
 xmlns:tools="http://schemas.android.com/tools" >
-
-### <a name="1"></a> Research Assignment 3 Font family
-
--How do we create and use the font family file?
--Why do we prefer to use the way you specify?
-
-### <a name="2"></a> Answer 3
-
-A font family is a set of font files along with its style and weight details. In Android, you can create a new font family as an XML resource and access it as a single unit, instead of referencing each style and weight as separate resources.
-To create a font family, perform the following steps in the Android Studio:
-
-<ul>
-  <li>Right-click the font folder and go to New > Font resource file. The New Resource File window appears.</li>
-  <li>Enter the file name, and then click OK. The new font resource XML opens in the editor.</li>
-  <li>Enclose each font file, style, and weight attribute in the <font> element. The following XML illustrates adding font-related attributes in the font resource XML:</li>
-</ul>
--Right-click the font folder and go to New > Font resource file. The New Resource File window appears.
--Enter the file name, and then click OK. The new font resource XML opens in the editor.
--Enclose each font file, style, and weight attribute in the <font> element. The following XML illustrates adding font-related attributes in the font resource XML:
-    
-   <?xml version="1.0" encoding="utf-8"?>
-    
-<font-family xmlns:android="http://schemas.android.com/apk/res/android">
-    
-    <font
-          
-        android:fontStyle="normal"
-          
-        android:fontWeight="400"
-          
-        android:font="@font/lobster_regular" />
-    
-    <font
-          
-        android:fontStyle="italic"
-          
-        android:fontWeight="400"
-          
-        android:font="@font/lobster_italic" />
-    
-</font-family> 
-    
- # <a name="1"></a> Türkçe
 
 ### <a name="1"></a> Araştırma ödevi 3-Font family
     
 -Font family dosyası nasıl oluşturulup kullanıyoruz?
 -Neden belirttiğiniz şekilde kullanımı tercih ediyoruz?
     
-### <a name="2"></a> Cevap 3
+## <a name="2"></a> Cevap 3
 Font kaynağı, uygulamanızda kullanabileceğiniz özel bir yazı tipi tanımlar. Yazı tipleri, tek tek yazı tipi dosyaları veya yazı tipi ailesi olarak bilinen ve XML'de tanımlanan bir yazı tipi dosyaları koleksiyonu olabilir.
 Bir yazı tipi ailesi, stili ve ağırlık ayrıntılarıyla birlikte bir yazı tipi dosyası kümesidir. Android'de, bir XML kaynağı olarak yeni bir yazı tipi ailesi oluşturabilir ve her bir stile ve ağırlığa ayrı kaynaklar olarak başvurmak yerine tek bir birim olarak erişebilirsiniz.
     
@@ -136,6 +104,38 @@ Bir yazı tipi ailesi, stili ve ağırlık ayrıntılarıyla birlikte bir yazı 
     
 </font-family>
 
+![image](https://user-images.githubusercontent.com/85364012/164991279-a777a789-42ff-4cfd-a5de-a2d4f2c6f3d5.png)
+
+
+    
+ ### <a name="1"></a> Araştırma ödevi 4- Property Animation
+    
+ <ul>
+  <li>Property Animation ile ilgili olarak objectAnimator ile animator arasındaki farkı açıklayınız</li>
+</ul>
+    
+### <a name="3"></a> Cevap 4
+    
+Property animasyon sistemi, hemen hemen her şeyi canlandırmanıza izin veren sağlam bir çerçevedir. Ekrana çizilip çizilmediğine bakılmaksızın, herhangi bir nesne özelliğini zaman içinde değiştirmek için bir animasyon tanımlayabilirsiniz. Bir property animasyonu, belirli bir süre boyunca bir özelliğin (bir nesnedeki alan) değerini değiştirir. Bir şeyi canlandırmak için, bir nesnenin ekrandaki konumu, ne kadar süreyle canlandırmak istediğiniz ve hangi değerler arasında canlandırmak istediğiniz gibi, canlandırmak istediğiniz nesne özelliğini belirtirsiniz.
+
+Property animasyon sistemi, bir animasyonun aşağıdaki özelliklerini tanımlamanıza olanak tanır:
+Duration: Bir animasyonun süresini belirleyebilirsiniz. Varsayılan uzunluk 300 ms'dir.
+Time interpolation: : Özellik değerlerinin, animasyonun geçerli geçen süresinin bir fonksiyonu olarak nasıl hesaplanacağını belirleyebilirsiniz.
+Repeat count and behavior: Bir sürenin sonuna geldiğinde bir animasyonun tekrarlanıp tekrarlanmayacağını ve animasyonun kaç kez tekrarlanacağını belirleyebilirsiniz. Animasyonun tersten oynatılmasını isteyip istemediğinizi de belirtebilirsiniz. Geriye ayarlamak, tekrar sayısına ulaşılana kadar animasyonu tekrar tekrar ileri ve ardından geri oynatır.
+Animator sets: Animasyonları, birlikte veya sırayla veya belirtilen gecikmelerden sonra oynayan mantıksal kümeler halinde gruplayabilirsiniz.
+Frame refresh delay: Animasyonunuzun karelerini ne sıklıkta yenileyeceğinizi belirleyebilirsiniz. Varsayılan, her 10 ms'de bir yenilenecek şekilde ayarlanmıştır, ancak uygulamanızın çerçeveleri yenileme hızı, sonuçta sistemin genel olarak ne kadar meşgul olduğuna ve sistemin temel zamanlayıcıya ne kadar hızlı hizmet verebileceğine bağlıdır.
+    
+ValueAnimator
+ Animasyon değerlerini hesaplayan ve her animasyonun zamanlama ayrıntılarını, bir animasyonun tekrarlanıp tekrarlanmadığı hakkında bilgileri, güncelleme olaylarını alan dinleyicileri ve değerlendirilecek özel türler ayarlama yeteneğini içeren tüm temel işlevlere sahiptir. Animasyon özelliklerinin iki parçası vardır: canlandırılan değerlerin hesaplanması ve bu değerlerin canlandırılan nesne ve özellik üzerinde ayarlanması. ValueAnimator ikinci parçayı gerçekleştirmez, bu nedenle ValueAnimator tarafından hesaplanan değerlerdeki güncellemeleri dinlemeli ve canlandırmak istediğiniz nesneleri kendi mantığınızla değiştirmelisiniz. 
+    
+ 
+Object Animator
+ Canlandırmak için bir hedef nesne ve nesne özelliği ayarlamanıza izin veren bir ValueAnimator alt sınıfı. Bu sınıf, animasyon için yeni bir değer hesapladığında özelliği buna göre günceller. Hedef nesnelerde değerleri canlandırma sürecini çok daha kolay hale getirdiği için çoğu zaman ObjectAnimator kullanmak istersiniz. Ancak, ObjectAnimator'ın hedef nesnede belirli erişimci yöntemlerinin bulunmasını gerektirme gibi birkaç kısıtlaması daha olduğundan, bazen ValueAnimator'ı doğrudan kullanmak istersiniz.
+    
+    
+ 
+
+https://user-images.githubusercontent.com/85364012/164990955-b689475b-655d-444c-89c4-54cc195472c7.mp4
 
 
 
