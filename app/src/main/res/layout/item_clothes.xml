@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="itemClothes"
+            type="com.suveybesena.upschoolprojects.model.Clothes" />
+
+        <variable
+            name="clickHandler"
+            type="com.suveybesena.upschoolprojects.OnClickHandlerInterface" />
+        <variable
+            name="position"
+            type="Integer" />
+
+    </data>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:onClick="@{(v) -> clickHandler.onClick(v,position)}">
+
+    <ImageView
+        android:id="@+id/ivClothes"
+        android:layout_width="173dp"
+        android:layout_height="243dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/sharing"
+        app:imageResource="@{itemClothes.imageId}"/>
+
+    <ImageView
+        android:id="@+id/tvClothesButton"
+        android:layout_width="8dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/ic_combined_shape"
+        app:layout_constraintStart_toEndOf="@+id/tvClothesPrice"
+        app:layout_constraintTop_toBottomOf="@+id/ivClothes"
+        app:srcCompat="@drawable/sharing" />
+
+    <TextView
+        android:id="@+id/tvClothesName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:text="@{itemClothes.title}"
+        android:padding="5dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivClothes" />
+
+    <TextView
+        android:id="@+id/tvClothesPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:padding="5dp"
+        android:text="@{itemClothes.price}"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvClothesName" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
